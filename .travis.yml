@@ -1,4 +1,4 @@
-# TravisCI configuration for php-stubs/woocommerce-stubs
+# TravisCI configuration for php-stubs/phpstan-dokan-stubs
 
 language: "php"
 os:
@@ -23,17 +23,17 @@ install:
   ## Reinstall sub-packages into /packages/
   #- "composer update --no-interaction"
   - |
-    LATEST="$(jq -r '."require"."woocommerce/woocommerce"' source/composer.json)"
-    wget -P source/ "https://downloads.wordpress.org/plugin/woocommerce.${LATEST}.zip"
-    unzip -q -d source/ "source/woocommerce.${LATEST}.zip"
+    LATEST="$(jq -r '."require"."dokan-lite/dokan"' source/composer.json)"
+    wget -P source/ "https://downloads.wordpress.org/plugin/dokan-lite.${LATEST}.zip"
+    unzip -q -d source/ "source/dokan-lite.${LATEST}.zip"
 
 before_script:
-  - "cat ./source/woocommerce/woocommerce.php"
+  - "cat ./source/dokan-lite/dokan.php"
 
 script:
   - "bash -x ./generate.sh"
-  - "php -l woocommerce-stubs.php"
-  - "php -l woocommerce-packages-stubs.php"
+  - "php -l dokan-constants-stubs.php"
+  - "php -l dokan-stubs.php"
   - "git diff --exit-code"
   - |
-    php -r 'require "vendor/php-stubs/wordpress-stubs/wordpress-stubs.php"; require "woocommerce-stubs.php"; require "woocommerce-packages-stubs.php";'
+    php -r 'require "vendor/php-stubs/wordpress-stubs/wordpress-stubs.php"; require "vendor/php-stubs/woocommerce-stubs/woocommerce-stubs.php"; require "dokan-constants-stubs.php"; require "dokan-stubs.php";'
