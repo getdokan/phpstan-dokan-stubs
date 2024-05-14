@@ -1,8 +1,9 @@
 {
-    "name": "mralaminahamed/freemius-stubs",
-    "description": "freemius wordpress-sdk function and class declaration stubs for static analysis.",
+    "name": "mralaminahamed/dokan-stubs",
+    "description": "dokan function and class declaration stubs for static analysis.",
     "keywords": [
-        "freemius",
+        "dokan",
+        "woocommerce",
         "wordpress",
         "static analysis",
         "phpstan"
@@ -10,7 +11,8 @@
     "homepage": "https://github.com/mralaminahamed/freemius-stubs",
     "license": "MIT",
     "require": {
-        "php-stubs/wordpress-stubs": "^5.3 || ^6.0"
+        "php-stubs/wordpress-stubs": "^5.3 || ^6.0",
+        "php-stubs/woocommerce-stubs": "dev-master"
     },
     "require-dev": {
         "php": "~7.1 || ~8.0",
@@ -28,8 +30,8 @@
         }
     },
     "scripts": {
-        "post-install-cmd": "@composer --working-dir=source/ update --no-interaction",
-        "post-update-cmd" : "@composer --working-dir=source/ update --no-interaction",
+        "disabled-post-install-cmd": "@composer --working-dir=source/ update --no-interaction",
+        "disabled-post-update-cmd" : "@composer --working-dir=source/ update --no-interaction",
         "cleanup": "git status --short --ignored | sed -n -e 's#^!! ##p' | xargs -r rm -vrf"
     },
     "scripts-descriptions": {
