@@ -2,16 +2,16 @@
 
 return \StubsGenerator\Finder::create()
     ->in( array(
-        'source/dokan',
+        'source/dokan-lite',
     ) )
-    ->notPath('customizer')
-    ->notPath('debug')
     ->append(
         \StubsGenerator\Finder::create()
-            ->in(['source/dokan'])
+            ->in(['source/dokan-lite'])
             ->files()
             ->depth('< 1')
             ->path('dokan.php')
     )
+    // ->notPath('customizer')
+    // ->notPath('debug')
     ->sortByName(true)
 ;

@@ -12,7 +12,7 @@ set -e
 
 test -f "$FILE" || touch "$FILE"
 test -f "$FILE_CONSTANTS" || touch "$FILE_CONSTANTS"
-test -d "source/dokan"
+test -d "source/dokan-lite"
 
 # Exclude globals, constants.
 "$(dirname "$0")/vendor/bin/generate-stubs" \

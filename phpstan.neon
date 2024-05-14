@@ -1,8 +1,8 @@
 parameters:
     paths:
-        - freemius-stubs.php
+        - dokan-stubs.php
     scanFiles:
-        - freemius-constants-stubs.php
+        - dokan-constants-stubs.php
     bootstrapFiles:
         - bootstrap.php
     level: 5
